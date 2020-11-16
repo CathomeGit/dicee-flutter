@@ -38,7 +38,9 @@ class _DicePageState extends State<DicePage> {
       child: Column(
         children: [
           Expanded(
+            flex: 3,
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Expanded(
                   child: Padding(
@@ -55,21 +57,25 @@ class _DicePageState extends State<DicePage> {
               ],
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              FlatButton(
-                onPressed: () {
-                  randomizeDices();
-                },
-                child: Text(
-                  'ROLL DICES',
-                  style: TextStyle(fontSize: 20.0),
-                ),
-                textColor: Colors.white,
-                textTheme: ButtonTextTheme.primary,
-              )
-            ],
+          Expanded(
+            flex: 2,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                FlatButton(
+                  onPressed: () {
+                    randomizeDices();
+                  },
+                  child: Text(
+                    'ROLL DICES',
+                    style: TextStyle(fontSize: 20.0),
+                  ),
+                  textColor: Colors.white,
+                  textTheme: ButtonTextTheme.primary,
+                )
+              ],
+            ),
           ),
         ],
       ),
